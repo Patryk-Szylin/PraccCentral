@@ -72,3 +72,4 @@ E:\Websites\Business\PraccCentral\PraccCentral\PraccCentral\obj\Debug\PraccCentr
 E:\Websites\Business\PraccCentral\PraccCentral\PraccCentral\obj\Debug\PraccCentral.Migrations.InitialCreate.resources
 E:\Websites\Business\PraccCentral\PraccCentral\PraccCentral\obj\Debug\PraccCentral.csproj.GenerateResource.Cache
 E:\Websites\Business\PraccCentral\PraccCentral\PraccCentral\obj\Debug\PraccCentral.Migrations.AddedPraccDBContext.resources
+E:\Websites\Business\PraccCentral\PraccCentral\PraccCentral\obj\Debug\PraccCentral.Migrations.AddedPraccsToUsersAndDbContext.resources

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<PraccCentral.Models.Pracc>
+
+@{
+    ViewBag.Title = "DisplayForUser";
+}
+
+<h2>DisplayForUser</h2>
+<h2>@ViewBag.UsersPracc</h2>
+
+@foreach (var pracc in Model)
+{
+    <h4>@pracc.Map</h4>
+}
+

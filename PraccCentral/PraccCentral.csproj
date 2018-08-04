@@ -204,6 +204,10 @@
     <Compile Include="Migrations\201808021129594_AddedPraccDBContext.Designer.cs">
       <DependentUpon>201808021129594_AddedPraccDBContext.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808021140493_AddedPraccsToUsersAndDbContext.cs" />
+    <Compile Include="Migrations\201808021140493_AddedPraccsToUsersAndDbContext.Designer.cs">
+      <DependentUpon>201808021140493_AddedPraccsToUsersAndDbContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -270,6 +274,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Pracc\Index.cshtml" />
+    <Content Include="Views\Pracc\DisplayAll.cshtml" />
+    <Content Include="Views\Pracc\DisplayForUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -293,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808021129594_AddedPraccDBContext.resx">
       <DependentUpon>201808021129594_AddedPraccDBContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808021140493_AddedPraccsToUsersAndDbContext.resx">
+      <DependentUpon>201808021140493_AddedPraccsToUsersAndDbContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -56,7 +56,7 @@ namespace PraccCentral.Controllers
 
         public ActionResult DisplayUser(string id)
         {
-            var praccs = db.Users.FirstOrDefault(u => u.Id == id).Praccs;
+            var praccs = db.Users.FirstOrDefault(u => u.Id == id).UserPraccs;
 
             //var user = db.Users.FirstOrDefault(u => u.Id == id);
             return View(praccs);
@@ -64,11 +64,11 @@ namespace PraccCentral.Controllers
         }
 
 
-        //public ActionResult DisplayAll()
-        //{
-        //    var praccs = db.Praccs.ToList();
-        //    return View(praccs);
-        //}
+        public ActionResult DisplayAll()
+        {
+            var praccs = db.AllPraccs.ToList();
+            return View(praccs);
+        }
 
         //[HttpPost]
         //public ActionResult DisplayAll(ApplicationUser userRequest, int praccId)
@@ -84,6 +84,22 @@ namespace PraccCentral.Controllers
         //    return View(pracc);
         //}
 
+        public ActionResult DisplayForUser(string id)
+        {
+            //var user = db.Users.FirstOrDefault(u => u.Id == userId);
+            var userpraccs = db.AllPraccs.Where(p => p.User.Id == id);
+
+
+            if(userpraccs != null)
+            {
+                return View(userpraccs);
+            }
+            else
+            {
+                ViewBag.UsersPracc = "There's no such user";
+                return View();
+            }            
+        }
 
 
 
@@ -112,7 +128,12 @@ namespace PraccCentral.Controllers
 
                 var currentuser = db.Users.AsEnumerable().First(u => u.Id == System.Web.HttpContext.Current.User.Identity.GetUserId());
                 //pracc.Owner = currentuser;
-                currentuser.Praccs.Add(pracc);
+                currentuser.UserPraccs.Add(pracc);
+
+                // AllPraccs should be updated when praccs are created by users
+                // The way it would be done would be to populute AllPraccs through fetching data from looping through all users
+                // However this would probably result in longer request times if there is loads of praccs
+                db.AllPraccs.Add(pracc);
 
                 db.SaveChanges();
 
